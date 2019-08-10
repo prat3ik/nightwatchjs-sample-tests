@@ -6,12 +6,12 @@ module.exports = {
         driver.navigate();
         driver.waitForElementVisible('body', 3000);
         driver.click('@logIn');
-        driver.pause(2000);
         driver.setValue('@username', username);
         driver.setValue('@password', password);
         driver.click('@loginButton');
-            browser.pause(2000);
-            driver.assert.containsText('@successMessage', 'WELCOME :)');
-            browser.end();
+        // Static wait:
+        // browser.pause(2000);
+        driver.assert.containsText('@successMessage', 'WELCOME :)');
+        browser.end();
     }
 };
